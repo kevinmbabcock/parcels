@@ -1,13 +1,13 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-# require('/lib/parcels')
+require('./lib/parcels')
 
 get('/') do
   erb(:index)
 end
 
-get('/output') do
+post('/output') do
   length = params.fetch("length")
   width = params.fetch("width")
   depth = params.fetch("depth")
